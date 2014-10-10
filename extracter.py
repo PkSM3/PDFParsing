@@ -3,16 +3,23 @@ import csv
 
 class Scanner:
 
-
-	def extractPDFs(self,param):
-		print param
+	def extractPDFs(self,param,pID,PI,Ag):
+		# print param
 		import glob
 		files = glob.glob(param+'/*.pdf')
 		for i in files:
+
 			seulfile = i.replace(param+"/","")
-			print i
-			print seulfile
-			print 
+			if seulfile:
+				print "i:",i
+				# print "seulfile:",seulfile
+				# print 
+				txtname = seulfile.replace(".pdf",".txt")
+				# import subprocess
+				# subprocess.Popen('python pdf2txt.py "'+i+'" > "'+pID+"|"+PI+"|"+Ag+"|||"+txtname+'"')
+				print 'python pdf2txt.py "'+i+'" > "'+pID+"|"+PI+"|"+Ag+"|||"+txtname+'"'
+				
+			
 
 
 	def extrMeta(self,dirname):
@@ -47,8 +54,12 @@ class Scanner:
 				if metadata[0]: 
 					if write:
 						# print [ dirs[0] , metadata[0] , metadata[1], metadata[2] ]
-						self.extractPDFs(dirs[0])
-						c.writerow([ dirs[0] , metadata[0] , metadata[1], metadata[2] ])
+						pID = metadata[0]
+						PI = metadata[1]
+						Ag = metadata[2]
+						self.extractPDFs(dirs[0],pID,PI,Ag)
+						# break
+						# c.writerow([ dirs[0] , metadata[0] , metadata[1], metadata[2] ])
 					else:
 						print '"'+dirs[0]+'/"\t',"\t".join(metadata)
 				else: 

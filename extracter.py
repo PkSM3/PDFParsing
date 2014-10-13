@@ -69,7 +69,7 @@ class Scanner:
 							for p in pdfs:
 								pdf2txt = p.replace(" > "," > "+outputFolder+"/")
 								# print pdf2txt
-								# os.system(pdf2txt)
+								os.system(pdf2txt)
 							# print pID,PI,Ag
 							# print pdfs
 							# print "----------------------\n"
@@ -105,7 +105,7 @@ outputname = "Save.csv"
 # print start_time
 
 outputFolder = "output"
-# os.system("rm -R "+outputFolder+"; mkdir "+outputFolder)
+os.system("rm -R "+outputFolder+"; mkdir "+outputFolder)
 
 scan = Scanner()
 print "... Scanning folders inside [",dir2scan,"]..."

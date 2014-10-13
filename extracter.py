@@ -3,20 +3,28 @@ import csv
 
 class Scanner:
 
-	def extractPDFs(self,param,pID,PI,Ag):
-		# print param
+	def __init__(self):
+
+		#=Type of failures=
+		#	0: Folder-name doesn't follow the defined pattern
+		#	1: Folder has no pdfs inside!
+		self.fails = []
+
+
+
+	def convertCommand(self,param,pID,PI,Ag,extension):
+		results = []
 		import glob
-		files = glob.glob(param+'/*.pdf')
+		files = glob.glob(param+'/*.'+extension)
 		for i in files:
 
 			seulfile = i.replace(param+"/","")
 			if seulfile:
-				print "i:",i
-				# print "seulfile:",seulfile
-				# print 
-				txtname = seulfile.replace(".pdf",".txt")
-				import os
-				os.system('python pdf2txt.py "'+i+'" > "'+pID+"|"+PI+"|"+Ag+"|||"+txtname+'"')
+				txtname = seulfile.replace("."+extension,".txt")
+				toexecute = 'python pdf2txt.py "'+i+'" > "'+pID+"|"+PI+"|"+Ag+"|||"+txtname+'"'
+				results.append(toexecute)
+
+		return results
 
 
 	def extrMeta(self,dirname):
@@ -35,11 +43,12 @@ class Scanner:
 				return [False,rawdir]
 
 
-	def Directory(self,dir2scan,items,outputname,write=False):
+	def Directory(self,dir2scan,items,outputname,outputFolder,write=False):
 
 		if write:
-			c = csv.writer(open(outputname, "wb"),delimiter='\t')
-			c.writerow(items) #write column names
+			x = "create csv"
+			# c = csv.writer(open(outputname, "wb"),delimiter='\t')
+			# c.writerow(items) #write column names
 
 		for dirs in os.walk(dir2scan):
 
@@ -54,12 +63,23 @@ class Scanner:
 						pID = metadata[0]
 						PI = metadata[1]
 						Ag = metadata[2]
-						self.extractPDFs(dirs[0],pID,PI,Ag)
+						pdfs = self.convertCommand(dirs[0],pID,PI,Ag,"pdf")
+						if len(pdfs)>0:
+
+							for p in pdfs:
+								pdf2txt = p.replace(" > "," > "+outputFolder+"/")
+								# print pdf2txt
+								# os.system(pdf2txt)
+							# print pID,PI,Ag
+							# print pdfs
+							# print "----------------------\n"
+						else:
+							self.fails.append([1,dirs[0]])
 					else:
 						print '"'+dirs[0]+'/"\t',"\t".join(metadata)
 				else: 
 					if len(metadata[1][0])>1:
-						print "error:",metadata[1]
+						self.fails.append([0,dirs[0]])
 
 
 
@@ -79,24 +99,29 @@ else:
 columnNames = ["FolderName","ProjectID", "Author", "Agency"]
 outputname = "Save.csv"
 
+
+# import time
+# start_time = time.time()
+# print start_time
+
+outputFolder = "output"
+# os.system("rm -R "+outputFolder+"; mkdir "+outputFolder)
+
 scan = Scanner()
 print "... Scanning folders inside [",dir2scan,"]..."
-scan.Directory(dir2scan,columnNames,outputname,True)#voila
+scan.Directory(dir2scan,columnNames,outputname,outputFolder,True)#voila
+
+
+
+# Folders that weren't processed
+if len(scan.fails)>0:
+	f = open("FailFolders.txt","w")
+	f.write("# Type of failures\n")
+	f.write("#	0: Folder-name doesn't follow the defined pattern\n")
+	f.write("#	1: Folder has no pdfs inside!\n\n")
+	for i in scan.fails:
+		f.write(`i[0]`+"\t"+i[1]+"\n")
+	f.close()
+
 print "fini"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

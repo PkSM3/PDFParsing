@@ -1,0 +1,81 @@
+# Type of failures
+#	0: Folder-name doesn't follow the defined pattern
+#	1: Folder has no pdfs inside!
+
+1	PasteurProposals/BPM2776 - L Rogge - INCA
+1	PasteurProposals/BPM2696 - F Chrétien - INCA
+1	PasteurProposals/BPM2595 - U Maskos - CE
+1	PasteurProposals/BPM2825 - A Scherf - ANR
+1	PasteurProposals/BPM2737 - L Opatowski - Autre
+1	PasteurProposals/BPM2707 - P Minoprio - CE
+1	PasteurProposals/BPM2849 - G Spaeth - ANR
+1	PasteurProposals/BPM2722 - MR Popoff - ANR
+1	PasteurProposals/BPM2840 - S Mecheri - ANR
+1	PasteurProposals/BPM2686 - M Picardeau - Autre
+1	PasteurProposals/BPM3017 - U Maskos - Autre
+1	PasteurProposals/BPM2642 - H de Reuse - DIM
+1	PasteurProposals/BPM2703 - L Rogge - CE
+1	PasteurProposals/BPM2679 - B Raynal - Autre
+1	PasteurProposals/BPM3156 - U Maskos - Autre
+1	PasteurProposals/BPM2769 - S Brisse - CE
+1	PasteurProposals/BPM2844 - P Alzari - autre
+1	PasteurProposals/BPM2810 - P Lafaye - ARSEP
+1	PasteurProposals/BPM2612 - M Muller-Trutwin - CE
+1	PasteurProposals/BPM2654 - U Maskos - autre
+1	PasteurProposals/BPM3140 - A Saez-Cirion - AmFar
+1	PasteurProposals/BPM2748 - FX Weill - ANR
+1	PasteurProposals/BPM2977 - PJ Corringer - ANR
+1	PasteurProposals/BPM3233 - O Bischof - ARC
+1	PasteurProposals/BPM2719 - A Opinel - CE
+1	PasteurProposals/BPM2474 - RJ Toro Olmedo - ANR
+1	PasteurProposals/BPM2943 - C Saleh - Autre
+1	PasteurProposals/BPM2705 - F Jonsson - Autre
+1	PasteurProposals/BPM2796 - S Shorte - CE
+1	PasteurProposals/BPM3169 - C Zurzolo - JPND
+1	PasteurProposals/BPM2800 - C Buchrieser - ANR
+1	PasteurProposals/BPM2678 - M Albert - CE
+1	PasteurProposals/BPM2730 - S Van der Werf - CE
+1	PasteurProposals/BPM3189 - M Delarue - ERA-Net
+1	PasteurProposals/BPM2649 - P Navarro Gil - Autre
+1	PasteurProposals/BPM2714 - A Mazeraud - Autre
+1	PasteurProposals/BPM2641 - O Bischof - INSERM
+1	PasteurProposals/BPM2811 - A Chenal - CE
+1	PasteurProposals/BPM2650 - Ricchetti M - Autre
+1	PasteurProposals/BPM2766 - E. Touati - INCA
+1	PasteurProposals/BPM2827 - GF Richard - ANR
+1	PasteurProposals/BPM2821 - C d Enfert - CE
+1	PasteurProposals/BPM2738 - C Demangel - ANR
+1	PasteurProposals/BPM2729 - B Schwikowski - CE
+1	PasteurProposals/BPM2781 - A Mazeraud - ARSEP
+1	PasteurProposals/BPM2620 - T Lang -DIM
+1	PasteurProposals/BPM2772 - N Guillen - ANR
+1	PasteurProposals/BPM2791 - I Martin-Verstraete - CE
+1	PasteurProposals/BPM2975 - M Lafon - ANR
+1	PasteurProposals/BPM2775 - A Sakuntabhai - ANR
+1	PasteurProposals/BPM3015 - F Dromer -ANR
+1	PasteurProposals/BPM3122 - P Reiter - Inserm
+1	PasteurProposals/BPM2799 - R Brosch - CE
+1	PasteurProposals/BPM2839 - G Eberl - ANR
+1	PasteurProposals/BPM2609 - C Muchardt - Inserm
+1	PasteurProposals/BPM2787 - S Pellegrini - Autre
+1	PasteurProposals/BPM3076 - T Bourgeron - Autre
+1	PasteurProposals/BPM2740 - JM Ghigo - ANR
+1	PasteurProposals/BPM2539 - A Subtil - ANR
+1	PasteurProposals/BPM2651 - M Lafon - Autre
+1	PasteurProposals/BPM2922 - A Subtil - ANR
+1	PasteurProposals/BPM3127 - G Eberl - Autre
+1	PasteurProposals/BPM2712 - P Goossens -ANR
+1	PasteurProposals/BPM2757 - A Saez-Cirion - ANRS
+1	PasteurProposals/BPM2710 - S Baize - ANR
+1	PasteurProposals/BPM2681 - M Albert - CE
+1	failfolder/BPM3175 - S Baize - ANR
+0	PasteurProposals/BPM3252-JM GHIGO - ANR
+0	PasteurProposals/P Sansonetti - ERC
+0	PasteurProposals/BPM2717 - S Van Teeffelen- Autre
+0	PasteurProposals/I Boneca - ERC
+0	PasteurProposals/BPM3288_Saleh-MarieCurie
+0	PasteurProposals/BPM3172 - C Demangel
+0	PasteurProposals/BPM3447-H Bourhy
+0	PasteurProposals/BPM77- J Enninga - ERC
+0	PasteurProposals/BPM3092 - A Echard- ANR
+0	PasteurProposals/BPM3175-S Baize - ANR

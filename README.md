@@ -3,7 +3,7 @@ Usage:
 (1) python extracter.py "Grant proposals"/
 
 This will generate a folder, e.g. "TO-USE/", with lots of txts from GrantProposals' pdfs.
-	Log of errors in FailFolders.txt
+	Errors log in FailFolders.txt
 
 (2) python processOutput.py
 
@@ -19,10 +19,4 @@ This will read the txts folder, e.g. "TO-USE/", and it will generate a CSV with:
 - TI: Title according "extraction BPM.xlsx"
 
 
-This CSV is uploaded to Cortext and then we can generate some bipartite maps.
-
-First testmap:
-
-http://manager.cortext.net/projects/pokesam3_gmail_com/pasteur/data/finalregs-45617-1-finalregs-db~45620/1/maps/maps_output.zip
-
-
+This CSV can be uploaded to Cortext and then it's possible to generate some bipartite maps.

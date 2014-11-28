@@ -25,13 +25,15 @@ class ExtractCSV:
 			reg = {}
 			for cell in row:
 				if cell.row==1:
-					items[cell.column] = cell.internal_value
+					items[cell.column] = cell.value
 				else: 
-					reg[cell.column] = cell.internal_value
+					# print cell.column,cell.value
+					if cell.column:
+						reg[cell.column] = cell.value
 			if reg.has_key(prikey) and reg[prikey]!=None and reg[prikey]!="":
 				finalregs.append(reg)
-			else:
-				print reg
+			# else:
+			#	print reg
 				
 		return finalregs
 
@@ -40,11 +42,21 @@ class ExtractCSV:
 
 		finalarray = {}
 		for i in results:
-			ACR = i["A"].replace("\n","").replace("\t","") if i["A"]!=None else ""
-			PI = i["B"].replace("\n","").replace("\t","") if i["B"]!=None else ""
-			ID = i["C"].replace("\n","").replace("\t","")
-			AG = i["D"].replace("\n","").replace("\t","") if i["D"]!=None else ""
-			TI = i["E"].replace("\n","").replace("\t","") if i["E"]!=None else ""
+
+			ACR=""
+			if i.has_key("A") and i["A"]!=None: ACR = i["A"].replace("\n","").replace("\t","").encode('utf-8')
+
+			PI = ""
+			if i.has_key("B") and i["B"]!=None: PI = i["B"].replace("\n","").replace("\t","").encode('utf-8')
+
+			ID = i["C"].replace("\n","").replace("\t","").encode('utf-8')
+
+			AG=""
+			if i.has_key("D") and i["D"]!=None: AG = i["D"].replace("\n","").replace("\t","").encode('utf-8')
+
+			TI=""
+			if i.has_key("E") and i["E"]!=None: TI = i["E"].replace("\n","").replace("\t","").encode('utf-8')
+
 			finalarray["BPM"+str(ID)] = {"PI":PI,"AG":AG,"ACR":ACR,"TI":TI}
 
 		return finalarray
